@@ -1,0 +1,71 @@
+﻿@model CourseManagement.DTO.UpdateStudentDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Student</title>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <div class="table-responsive" style="margin-top:150px">
+                <form action="/Teacher/UpdateStudent/@Model.Id" method="post">
+                    <table class="table table-hover">
+                        <tr>
+                            <td>Name</td>
+                            <td>
+                                <input type="text" name="Name" value=@Model.Name required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>
+                                <input type="text" name="Email" value=@Model.Email required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input type="text" name="Password" value=@Model.Password  readonly/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <td>
+                                <input type="text" name="Mobile" value=@Model.Mobile required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Role</td>
+                            <td>
+                                <input type="text" name="Role" value=@Model.Role readonly />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Course</td>
+                            <td>
+                                <select class="select" name="CourseName" multiple style="width:300px">
+                                    @foreach (var c in Model.Courses)
+                                    {
+                                        <option name="CourseName" value="@c.Name">@c.Name</option>
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" name="Update" value="Update" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </center>
+    </div>
+</body>
+</html>

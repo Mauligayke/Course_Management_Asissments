@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddCourse</title>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <div class="table-responsive" style="margin-top:150px">
+                <form action="/Admin/AddCourse" method="post">
+                    <table class="table table-hover">
+                        <tr>
+                            <td> Course Name</td>
+                            <td>
+                                <input type="text" name="Name" value="" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Duration</td>
+                            <td>
+                                <input type="number" name="Duration" value="" required />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" name="Add" value="Add" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </center>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@model List<CourseManagement.DTO.StudentDto>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TeacherHome</title>
+</head>
+<body>
+    <div class="container">
+        <br />
+        <a class="btn btn-primary" href="/Teacher/AddStudent">
+            Add Student
+        </a>
+        <br />
+        <br />
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead style="background-color:aquamarine">
+                    <tr>
+                        <th>Student Id</th>
+                        <th>Student Name</th>
+                        <th>Mobile</th>
+                        <th>Course Name</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var st in Model)
+                    {
+                        <tr>
+                            <td>
+                                @st.Id
+                            </td>
+                            <td>
+                                @st.Name
+                            </td>
+                            <td>
+                                @st.Mobile
+                            </td>
+                            <td>
+                                @st.CourseName
+                            </td>
+                            <td>
+                                <a class="btn btn-info" href="/Teacher/UpdateStudent/@st.Id">
+                                    Update
+                                </a>
+                                <a class="btn btn-danger" href="/Teacher/DeleteStudent/@st.Id">
+                                    Delete
+                                </a>
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

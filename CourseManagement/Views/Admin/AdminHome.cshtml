@@ -1,0 +1,138 @@
+﻿
+@model CourseManagement.DTO.AdminHomeDto
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminHome</title>
+</head>
+<body>
+    <div class="container">
+        <br />
+        <a class="btn btn-primary" href="/Admin/AddCourse">
+            Add Course
+        </a>
+        <br />
+        <br />
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead style="background-color:aquamarine">
+                    <tr>
+                        <th>Course Id</th>
+                        <th>Course Name</th>
+                        <th>Course Duration</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var st in Model.Courses)
+                    {
+                        <tr>
+                            <td>
+                                @st.Id
+                            </td>
+                            <td>
+                                @st.Name
+                            </td>
+                            <td>
+                                @st.Duration
+                            </td>
+                            <td>
+                                <a class="btn btn-info" href="/Admin/UpdateCourse/@st.Id">
+                                    Update
+                                </a>
+                                <a class="btn btn-danger" href="/Admin/DeleteCourse/@st.Id">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <a class="btn btn-primary" href="/Admin/AddTeacher">
+            Add Teacher
+        </a>
+        <br />
+        <br />
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead style="background-color:aquamarine">
+                    <tr>
+                        <th>Teacher Id</th>
+                        <th>Teacher Name</th>
+                        <th>Mobile</th>
+                        <th>Course Name</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var st in Model.Teachers)
+                    {
+                        <tr>
+                            <td>
+                                @st.Id
+                            </td>
+                            <td>
+                                @st.Name
+                            </td>
+                            <td>
+                                @st.Mobile
+                            </td>
+                            <td>
+                              @st.CourseName
+                            </td>
+                            <td>
+                                <a class="btn btn-info" href="/Admin/EditTeacher/@st.Id">
+                                    Update
+                                </a>
+                                <a class="btn btn-danger" href="/Admin/DeleteTeacher/@st.Id">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead style="background-color:aquamarine">
+                    <tr>
+                        <th>Student Id</th>
+                        <th>Student Name</th>
+                        <th>Mobile</th>
+                        <th>Course Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var st in Model.Students)
+                    {
+                        <tr>
+                            <td>
+                                @st.Id
+                            </td>
+                            <td>
+                                @st.Name
+                            </td>
+                            <td>
+                                @st.Mobile
+                            </td>
+                            <td>
+                                @st.CourseName
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

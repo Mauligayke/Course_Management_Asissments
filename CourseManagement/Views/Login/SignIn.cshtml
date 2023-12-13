@@ -1,0 +1,44 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>SignIn</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="height:500px; width:350px">
+        <center>
+            <div class="table-responsive" style="margin-top:150px">
+                <form action="/Login/SignIn" method="post">
+                    <table class="table table-hover">
+                        <tr>
+                            <td>Email</td>
+                            <td>
+                                <input type="text" name="Email" value="" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input type="text" name="Password" value="" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" name="loginbtn" value="Sign In" />
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
+                        @ViewBag.message
+                    </div>
+                </form>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
